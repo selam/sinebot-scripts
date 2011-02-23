@@ -21,7 +21,7 @@ if(headerElement){
   var movieName = headerElement.innerHTML;
 
   addLink("http://btjunkie.org/search?q=" + movieName, 'Btjunkie.com Sayfası');
-  addLink("http://isohunt.com/torrents/search?q=" + movieName, 'Isohunt.com Sayfası');
+  addLink("http://isohunt.com/torrents/?ihq=" + movieName, 'Isohunt.com Sayfası');
 }
 
 function addLink(link, text){
