@@ -15,28 +15,24 @@
 
 var headerElement = document.querySelector('div[class="feedtitle"] h2');
 
+
+
 if(headerElement){
   var movieName = headerElement.innerHTML;
 
-  var connection = document.getElementById('subtitle-connections');
+  addLink("http://btjunkie.org/search?q=" + movieName, 'Btjunkie.com Sayfası');
+  addLink("http://isohunt.com/torrents/search?q=" + movieName, 'Isohunt.com Sayfası');
+}
 
-  var liForbtJunkie = document.createElement('Li');
-  var aForbtJunkie = document.createElement('a');
-  aForbtJunkie.href = "http://btjunkie.org/search?q=" + movieName;
-  aForbtJunkie.innerHTML = "btjunkie.com Sayfası";
-  aForbtJunkie.target = "_blank";
-  liForbtJunkie.appendChild(aForbtJunkie);
+function addLink(link, text){
 
-
-  var liForIsoHunt = document.createElement('Li');
-  var aForIsoHunt = document.createElement('a');
-  aForIsoHunt.href = "http://isohunt.com/torrents/search?q=" + movieName;
-  aForIsoHunt.innerHTML = "isohunt.com Sayfası";
-  aForIsoHunt.target = "_blank";
-  liForIsoHunt.appendChild(aForIsoHunt);
-
-  document.getElementById('subtitle-connections').appendChild(liForbtJunkie);
-  document.getElementById('subtitle-connections').appendChild(liForIsoHunt);
+  var li = document.createElement('Li');
+  var a = document.createElement('a');
+  a.href = link;
+  a.innerHTML = text;
+  a.target = "_blank";
+  li.appendChild(a);
+  document.getElementById('subtitle-connections').appendChild(li);
 }
 
 })();
